@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  canopsis:
+    build: adamamaiga/docker-canopsis
+    working_dir: /
+    command: ["/start.sh"]
+    ports:
+     - 15672:15672
+     - 8082:8082
