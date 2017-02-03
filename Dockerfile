@@ -34,9 +34,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         lua-ldap-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
+
+# CANOPSIS_COMMIT_HASH allows us to specify the exact version of canopsis this container will build
+#
+ENV CANOPSIS_COMMIT_HASH 4c53ed29b8f0b3686d267f3f8fb8baafa919afc5
+
+
 RUN git clone https://github.com/capensis/canopsis.git
 WORKDIR /canopsis
-RUN git reset --hard 4c53ed29b8f0b3686d267f3f8fb8baafa919afc5
+RUN git reset --hard ${CANOPSIS_COMMIT_HASH}
 RUN git submodule init
 RUN git submodule update
 
