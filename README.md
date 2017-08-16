@@ -9,7 +9,7 @@ Build and run container with docker-compose >= v1.6.0
 Build and run container without docker-compose
 
 * `docker pull adamamaiga/docker-canopsis .` #pull
-* `docker run -d --name canopsis -p 8082:8082 -p 15672:15672 adamamaiga/docker-canopsis` #run
+* `docker run -d --name canopsis -p 5672:5672 -p 8082:8082 -p 15672:15672 adamamaiga/docker-canopsis` #run
 
 * `docker build -t adamamaiga/docker-canopsis .` #build
 
